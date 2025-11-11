@@ -1,3 +1,5 @@
+--- Exploratory Data Analysis
+
 create database Healthcare_Antibiotic_Resistance_Analysis;
 use Healthcare_Antibiotic_Resistance_Analysis;
 create table Patient_Info (patient_id varchar(100) primary key,age int,gender varchar(10),ward varchar(50),admission_date DATE,discharge_date DATE);
@@ -17,3 +19,12 @@ select bacteria_name,count(*) as Total_Isolates from bacteria_isolates group by 
 select p.ward,b.bacteria_name,count(*) as Infection_Count from patient_info p join specimen_tests s on p.patient_id=s.patient_id join bacteria_isolates b on s.specimen_id=b.specimen_id group by p.ward, b.bacteria_name order by Infection_Count desc;
 select a.antibiotic_name,a.sensitivity ,count(*) as Test_Count from Antibiotic_Resistance a group by a.antibiotic_name, a.sensitivity order by a.antibiotic_name, a.sensitivity;
 select isolate_id,count(*) as Resistant_Count from Antibiotic_Resistance where sensitivity="R" group by isolate_id having count(*)>=3 order by Resistant_Count desc;
+
+-- SQL ANALYSIS
+
+select b.Bacteria_Name, count(*) as Resistant_Count from bacteria_isolates as b join Antibiotic_Resistance as a on b.isolate_id=a.isolate_id where a.sensitivity="R" group by b.Bacteria_Name order by Resistant_Count desc limit 5;
+--- Escherichia Coli has highest number of resistant count followed by Enterococcus Faecallis followed by Pseudomonas Aeruginosa
+select Antibiotic_Name, round((sum(case when sensitivity="R" then 1 else 0 end)*100.0)/count(*),2) as Resistance_Percentage from Antibiotic_Resistance group by Antibiotic_Name order by Resistance_Percentage desc;
+--- Meropenam has highest resistance_percentage followed by Ciprofolxacin and Ceftriaxone
+select b.Bacteria_Name, count(distinct a.Isolate_Id) as MDR_Isolates from Bacteria_Isolates as b join Antibiotic_Resistance as a on b.isolate_id=a.isolate_id where a.sensitivity="R" group by b.Bacteria_Name having count(distinct a.Antibiotic_Name)>=3 order by MDR_Isolates desc;
+--- Escherichia Coli is the most dangerous for patient care followed by Enterococcus Faecallis followed by Pseudomonas Aeruginosa
