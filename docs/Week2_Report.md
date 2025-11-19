@@ -46,6 +46,8 @@ Infection control should address multiple pathogens simultaneously, not just one
 
 The Bacteria vs Infection Site analysis shows that the urinary tract is the most affected site (26.8%), while the bloodstream has the lowest infection count (22.7%). Escherichia coli is the most common bacterium overall, particularly dominant in urinary infections. Site-specific dominant bacteria include E. coli (Urinary), Klebsiella pneumoniae (Respiratory), Enterococcus faecalis (Bloodstream), and Pseudomonas aeruginosa (Wound). The distribution also reveals that multiple pathogens contribute to each infection site, indicating that infection control strategies should be diverse and site-specific rather than focused on a single bacterium.
 
+![Capture](https://github.com/user-attachments/assets/cf8d50b6-47d6-4e64-9c27-cf28cf97049f)
+
 ### Antibiotic vs Resistance(%) Pivot:
 
 #### Purpose: To analyse the count of sensitivity of bacteria on different antibiotics
@@ -97,6 +99,8 @@ Continuous monitoring is essential; rotating or combining antibiotics may reduce
 The antibiotic resistance analysis revealed that approximately 35% of bacterial isolates were resistant to commonly used antibiotics. Vancomycin demonstrated the highest sensitivity (58.2%), followed by Tetracycline (56.4%) and Amoxicillin (56.0%), indicating their continued effectiveness against many isolates. In contrast, Meropenem exhibited the highest resistance rate (36.7%), highlighting the emergence of carbapenem-resistant strains, a major public health concern.
 Overall, resistance patterns suggest moderate antimicrobial resistance in the sample, reinforcing the need for rational antibiotic usage and continuous surveillance to prevent escalation.
 
+![Capture](https://github.com/user-attachments/assets/bc63de97-0bfd-407e-b8c1-dbae03af587a)
+
 ### Ward_Patient_Pivot:
 
 #### Purpose: To analyse the number of patients in each ward.
@@ -140,6 +144,8 @@ Indicates healthy hospital capacity management across both adult and child patie
 The ward-wise analysis revealed a balanced patient distribution across all departments. The Surgery ward recorded the highest admissions (26.3%), followed by the General (25.2%) and Pediatric (24.3%) wards, while the ICU had the lowest patient count (24.2%).
 
 This distribution suggests efficient hospital resource utilization and consistent patient inflow across departments, with slightly higher demand in surgical care.
+
+![Capture](https://github.com/user-attachments/assets/f73770e3-c03c-4427-a8f4-e3a6d296b983)
 
 ## Day :9 Summary:
 
