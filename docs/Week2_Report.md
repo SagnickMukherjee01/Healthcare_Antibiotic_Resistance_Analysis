@@ -154,10 +154,26 @@ This distribution suggests efficient hospital resource utilization and consisten
 #### SQL Query:
 
 ``` sql
-select b.Bacteria_Name, count(*) as Resistant_Count from bacteria_isolates as b join Antibiotic_Resistance as a on b.isolate_id=a.isolate_id where a.sensitivity="R" group by b.Bacteria_Name order by Resistant_Count desc limit 5;
+SELECT 
+    b.Bacteria_Name,
+    COUNT(*) AS Resistant_Count
+FROM 
+    bacteria_isolates AS b
+JOIN 
+    Antibiotic_Resistance AS a 
+    ON b.isolate_id = a.isolate_id
+WHERE 
+    a.sensitivity = 'R'
+GROUP BY 
+    b.Bacteria_Name
+ORDER BY 
+    Resistant_Count DESC
+LIMIT 5;
 ```
 
 #### Findings:
+
+![Capture](https://github.com/user-attachments/assets/000c440b-ca02-461e-9a2a-2b21653bda24)
 
 Escherichia Coli has highest number of resistant count followed by Enterococcus Faecallis followed by Pseudomonas Aeruginosa
 
@@ -166,10 +182,25 @@ Escherichia Coli has highest number of resistant count followed by Enterococcus 
 #### SQL Query:
 
 ``` sql
-select Antibiotic_Name, round((sum(case when sensitivity="R" then 1 else 0 end)*100.0)/count(*),2) as Resistance_Percentage from Antibiotic_Resistance group by Antibiotic_Name order by Resistance_Percentage desc limit 1;
+SELECT 
+    Antibiotic_Name,
+    ROUND(
+        (SUM(CASE WHEN sensitivity = 'R' THEN 1 ELSE 0 END) * 100.0) / COUNT(*),
+        2
+    ) AS Resistance_Percentage
+FROM 
+    Antibiotic_Resistance
+GROUP BY 
+    Antibiotic_Name
+ORDER BY 
+    Resistance_Percentage DESC
+LIMIT 1;
+
 ```
 
 #### Findings:
+
+![Capture](https://github.com/user-attachments/assets/765a0da0-21ee-42b6-be9e-6aa1f976c693)
 
 Meropenam has highest resistance_percentage followed by Ciprofolxacin and Ceftriaxone
 
@@ -178,10 +209,27 @@ Meropenam has highest resistance_percentage followed by Ciprofolxacin and Ceftri
 #### SQL Query:
 
 ```sql
-select b.Bacteria_Name, count(distinct a.Isolate_Id) as MDR_Isolates from Bacteria_Isolates as b join Antibiotic_Resistance as a on b.isolate_id=a.isolate_id where a.sensitivity="R" group by b.Bacteria_Name having count(distinct a.Antibiotic_Name)>=3 order by MDR_Isolates desc;
+SELECT 
+    b.Bacteria_Name,
+    COUNT(DISTINCT a.Isolate_Id) AS MDR_Isolates
+FROM 
+    Bacteria_Isolates AS b
+JOIN 
+    Antibiotic_Resistance AS a 
+    ON b.isolate_id = a.isolate_id
+WHERE 
+    a.sensitivity = 'R'
+GROUP BY 
+    b.Bacteria_Name
+HAVING 
+    COUNT(DISTINCT a.Antibiotic_Name) >= 3
+ORDER BY 
+    MDR_Isolates DESC;
 ```
 
 #### Findings:
+
+![Capture](https://github.com/user-attachments/assets/8cd255fa-6128-4445-a113-0a9278d81eec)
 
 Escherichia Coli is the most dangerous for patient care followed by Enterococcus Faecallis followed by Pseudomonas Aeruginosa
 
@@ -192,6 +240,8 @@ Escherichia Coli is the most dangerous for patient care followed by Enterococcus
 #### Findings:
 
 E. coli and Enterococcus faecalis were the most common bacteria.
+
+![Capture](https://github.com/user-attachments/assets/9b831680-7749-4d78-a486-4e8d3f695948)
 
 #### Python Code used:
 
@@ -208,6 +258,8 @@ plt.show()
 ### Antibiotic Resistance:
 
 #### Findings:
+
+![Capture](https://github.com/user-attachments/assets/1cfdba79-8f9b-4f9b-b65a-01fdbd603f68)
 
 Meropenem and Ciprofloxacin showed the highest resistance rates (~35%).
 
@@ -226,6 +278,8 @@ plt.show()
 ### Age Distribution:
 
 #### Findings:
+
+![Capture](https://github.com/user-attachments/assets/2fa48e49-8a4c-4eca-a3b3-776987f3d8b0)
 
 The mean (45.6 years) and median (46 years) ages are almost equal, suggesting that the age distribution of infected patients is roughly symmetric. Most infections occur among middle-aged individuals, with no major skew toward younger or older age groups.
 
@@ -257,8 +311,12 @@ plt.show()
 
 The trend is not linear. The highest overall resistance is seen in the youngest population, 0-18 (36.8%), and the 46-60 group (36.1%). The lowest rates are in the 31-45 (33.9%) and 60+ (33.0%) groups.
 
+![1](https://github.com/user-attachments/assets/6afdb19d-ce6b-4b11-aa0c-c05b3562743a)
+
 #### Resistance Rate vs Infection Site
 There isn't a massive difference between sites, but Wound infections show the highest overall resistance rate (36.6%), while Bloodstream infections show the lowest (33.5%).
+
+![2](https://github.com/user-attachments/assets/edee92aa-d22e-4527-858a-5bae8fb1b533)
 
 #### Heatmap Deep Dive (The Cross-Tabulation)
 The heatmap is the most valuable chart as it shows the interaction between both variables.
@@ -272,6 +330,8 @@ The 19-30 age group also has the lowest resistance rate on the chart: 5.5% for R
 ##### The Most Consistent Problem:
 Urinary infections show high resistance across almost all age groups (10.7%, 10.5%, 9.8%, 10.7%). This is a broad, systemic issue, not an isolated one.
 
+![3](https://github.com/user-attachments/assets/acb75ac9-215c-4687-b92b-2bbcaaf362f8)
+
 ## Day :12 Summary
 
 ### Chi-square test between bacteria and resistance:-
@@ -284,6 +344,8 @@ Not Resistant (S + I)
 
 A contingency table was created for each bacteria species, followed by calculation of expected frequencies and Chi-square contributions for each cell. The overall Chi-square statistic and p-value were then computed.
 
+![Capture](https://github.com/user-attachments/assets/9bd9ace1-4b73-41af-8022-4ea11d0b74da)
+
 #### Test Result
 
 Chi-square statistic: Sum of all χ² components to get the χ² statistic
@@ -291,6 +353,9 @@ Chi-square statistic: Sum of all χ² components to get the χ² statistic
 Degrees of freedom: (rows−1)(columns−1)
 
 p-value (right-tail): 0.83
+
+![Capture](https://github.com/user-attachments/assets/e157a0a2-9161-40ff-9967-46b3aceb1d22)
+
 
 #### Interpretation
 
