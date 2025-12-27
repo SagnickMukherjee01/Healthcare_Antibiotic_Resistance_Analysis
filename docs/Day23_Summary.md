@@ -52,7 +52,10 @@ These tables are linked through primary and foreign keys, forming a relational h
 
 <img width="3006" height="1638" alt="bacteria_frequency" src="https://github.com/user-attachments/assets/51126e05-1d10-4036-8e6d-4c0372f254e1" />
 
-#### 
+#### Antibiotic Resistance
+
+<img width="2742" height="1638" alt="Antibiotic Resistance Rate" src="https://github.com/user-attachments/assets/b4e4f193-e79e-4ae7-bf3f-319a6657a871" />
+
 
 
 
