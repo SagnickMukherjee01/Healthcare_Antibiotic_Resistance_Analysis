@@ -60,7 +60,17 @@ These tables are linked through primary and foreign keys, forming a relational h
 
 <img width="2370" height="1765" alt="Age Distribution of Infected_" src="https://github.com/user-attachments/assets/d83a3673-4587-4877-9154-cf738b6c5a52" />
 
+#### Antibiotic resistant rate by age group
 
+<img width="2299" height="1397" alt="age_vs_resistance" src="https://github.com/user-attachments/assets/cacb9c14-6654-466f-9b91-7cfb93989354" />
+
+#### Infection site vs resistant rate
+
+<img width="2661" height="1397" alt="site_vs_resistance" src="https://github.com/user-attachments/assets/8cbcc687-2076-4090-8d40-eff0f43af895" />
+
+#### Age group vs Infection site insights
+
+<img width="2701" height="1097" alt="heatmap_age_site_resistance" src="https://github.com/user-attachments/assets/a2542b5e-77fc-44f3-9db2-f8d5d827330c" />
 
 
 ## 🔍 Key Insights
