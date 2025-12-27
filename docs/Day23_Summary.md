@@ -56,6 +56,9 @@ These tables are linked through primary and foreign keys, forming a relational h
 
 <img width="2742" height="1638" alt="Antibiotic Resistance Rate" src="https://github.com/user-attachments/assets/b4e4f193-e79e-4ae7-bf3f-319a6657a871" />
 
+#### Age distribution of infected patients
+
+<img width="2370" height="1765" alt="Age Distribution of Infected_" src="https://github.com/user-attachments/assets/d83a3673-4587-4877-9154-cf738b6c5a52" />
 
 
 
