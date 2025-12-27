@@ -42,7 +42,11 @@ These tables are linked through primary and foreign keys, forming a relational h
 
 ## 📊 Visual Snapshots
 
+### Dashboard:
+
 ![Clinical Insights Bacteria, Resistance   Ward Infection Analysis](https://github.com/user-attachments/assets/e1846aad-d107-4ccb-b13a-da65d8a83283)
+
+### Visualization:
 
 
 ## 🔍 Key Insights
