@@ -48,6 +48,13 @@ These tables are linked through primary and foreign keys, forming a relational h
 
 ### Visualization:
 
+#### Bacterial Frequency
+
+<img width="3006" height="1638" alt="bacteria_frequency" src="https://github.com/user-attachments/assets/51126e05-1d10-4036-8e6d-4c0372f254e1" />
+
+#### 
+
+
 
 
 ## 🔍 Key Insights
