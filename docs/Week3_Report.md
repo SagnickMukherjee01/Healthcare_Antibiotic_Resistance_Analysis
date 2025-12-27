@@ -11,8 +11,9 @@ Week 3 focused on transforming cleaned healthcare data into actionable insights 
 Interactive Power BI dashboards were created to analyze resistance patterns and infection burden.
 
 ### Key Findings:
+- **Meropenem** has highest resistance rate.
 
-- **E.coli** shows the highest resistance (especially to Ceftriaxone).
+- **E.coli** shows the highest resistance especially to Ceftriaxone.
 
 - **Enterococcus faecalis** is highly resistant to Ciprofloxacin.
 
